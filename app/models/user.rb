@@ -4,6 +4,7 @@ class User < ApplicationRecord
     validates :username, uniqueness: true, presence: true
     validates :password, length: { minimum: 6, allow_nil: true }
     validates :password_digest, presence: { message: 'Password can\'t be blank.' }
+    validates :cheer_count, numericality: { only_integer: true, minimum: 0 }
 
     attr_reader :password
 
