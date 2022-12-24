@@ -1,24 +1,17 @@
-<p id="notice"><%= notice %></p>
+<div class="profile">
+  <h2><%= @user.username.capitalize %>'s Profile</h2>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+  <div class="profile-section">
+    <p>Comments</p>
+  </div>
 
-<p>
-  <strong>Session token:</strong>
-  <%= @user.session_token %>
-</p>
+  <div class="profile-section">
+    <h3><%= @user.username.capitalize %>'s Goals:</h3>
+    <p>Goals</p>
+  </div>
 
-<p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
-</p>
+</div>
 
-<p>
-  <strong>Cheer count:</strong>
-  <%= @user.cheer_count %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <div class="all-users">
+    <a href="<%= users_url %>">All Users</a>
+  </div>
