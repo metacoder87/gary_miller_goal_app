@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-    include Commentable
 
     validates :session_token, presence: true
     validates :username, uniqueness: true, presence: true
