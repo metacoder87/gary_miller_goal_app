@@ -1,13 +1,14 @@
 class GoalsController < ApplicationController
-  before_action :set_goal, only: %i[ show edit update destroy ]
+  before_action :require_current_user!
 
   # GET /goals or /goals.json
   def index
-    @goals = Goal.all
+    @goals = current_user.goals
   end
 
   # GET /goals/1 or /goals/1.json
   def show
+    @goal = Goal.find(params[:id])
   end
 
   # GET /goals/new
@@ -17,54 +18,52 @@ class GoalsController < ApplicationController
 
   # GET /goals/1/edit
   def edit
+    @goal = Goal.find(params[:id])
   end
 
   # POST /goals or /goals.json
   def create
-    @goal = Goal.new(goal_params)
+    @goal = current_user.goals.new(goal_params)
 
-    respond_to do |format|
-      if @goal.save
-        format.html { redirect_to goal_url(@goal), notice: "Goal was successfully created." }
-        format.json { render :show, status: :created, location: @goal }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @goal.errors, status: :unprocessable_entity }
-      end
+    if @goal.save
+      flash[:notices] = ['Goal saved!']
+      redirect_to goal_url(@goal)
+    else
+      flash.now[:errors] = @goal.errors.full_messages
+      render :new
     end
   end
 
   # PATCH/PUT /goals/1 or /goals/1.json
   def update
-    respond_to do |format|
-      if @goal.update(goal_params)
-        format.html { redirect_to goal_url(@goal), notice: "Goal was successfully updated." }
-        format.json { render :show, status: :ok, location: @goal }
+    @goal = Goal.find(params[:id])
+
+    if @goal.update_attributes(goal_params)
+      flash[:notices] = ['Goal updated!']
+      if request.referer == edit_goal_url(@goal)
+        redirect_to @goal
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @goal.errors, status: :unprocessable_entity }
+        redirect_to request.referer
       end
+    else
+      flash[:errors] = @goal.errors.full_messages
+      render :edit
     end
   end
 
   # DELETE /goals/1 or /goals/1.json
   def destroy
+    @goal = Goal.find(params[:id])
     @goal.destroy
 
-    respond_to do |format|
-      format.html { redirect_to goals_url, notice: "Goal was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    flash[:notices] = ['Goal deleted!']
+    redirect_to goals_url
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_goal
-      @goal = Goal.find(params[:id])
-    end
 
     # Only allow a list of trusted parameters through.
     def goal_params
-      params.require(:goal).permit(:title, :private, :details, :completed, :user_id)
+      params.require(:goal).permit(:title, :private, :details, :completed)
     end
 end
