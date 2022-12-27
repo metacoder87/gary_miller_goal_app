@@ -1,5 +1,3 @@
 <h1>New Goal</h1>
 
-<%= render 'form', goal: @goal %>
-
-<%= link_to 'Back', goals_path %>
+<%= render 'goal_form', action_type: :new, goal: @goal %>
