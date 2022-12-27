@@ -1,42 +1,35 @@
-<%= form_with(model: goal, local: true) do |form| %>
-  <% if goal.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(goal.errors.count, "error") %> prohibited this goal from being saved:</h2>
+<% action = (action_type == :new) ? goals_url : goal_url(@goal) %>
+<% button_text = (action_type == :new) ? "New Goal" : "Update Goal" %>
 
-      <ul>
-      <% goal.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+<%= render 'shared/errors' %>
+
+<form action="<% action %>" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <% if action_type == :edit %>
+    <input type="hidden" name="_method" value="PUT">
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+  <label>Title:
+    <input type="text" name="goal[title]" value="<%= goal.title %>">
+  </label>
+  <br>
 
-  <div class="field">
-    <%= form.label :private %>
-    <%= form.check_box :private %>
-  </div>
+  <label>Details:
+    <textarea name="goal[details]"><%= goal.details %></textarea>
+  </label>
+  <br>
 
-  <div class="field">
-    <%= form.label :details %>
-    <%= form.text_area :details %>
-  </div>
+  <label>Private?
+    <input type="checkbox" name="goal[private]"
+      <%= 'checked="true"' if goal.private %>>
+  </label>
+  <br>
 
-  <div class="field">
-    <%= form.label :completed %>
-    <%= form.check_box :completed %>
-  </div>
+  <label>Completed?
+    <input type="checkbox" name="goal[completed]"
+      <%= 'checked="true"' if goal.private %>>
+  </label>
+  <br>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+  <input type="submit" value="<%= button_text %>">
+</form>
