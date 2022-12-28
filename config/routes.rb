@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :cheers, only: [:index]
   resources :goals do
     resources :cheers, only: [:create]
+  end
   resources :users, only: [:index, :show, :new, :create]
   resources :session, only: [:new, :create, :destroy]
   root to: 'users#index'
