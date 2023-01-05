@@ -2,7 +2,11 @@
   <h2><%= @user.username.capitalize %>'s Profile</h2>
 
   <div class="profile-section">
-    <p>Comments</p>
+    <% @user.comments.each do |comment| %>
+      <p><%= comment.body %></p>
+    <% end %>
+
+    <%= render 'shared/comments_form', commentable_id: @user.id, commentable_type: "User" %>
   </div>
 
   <div class="profile-section">
