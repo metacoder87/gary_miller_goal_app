@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    include Commentable
 
     validates :session_token, presence: true
     validates :username, uniqueness: true, presence: true
@@ -9,10 +10,19 @@ class User < ApplicationRecord
     attr_reader :password
 
     before_validation :ensure_session_token
+    before_validation :ensure_cheer_count
 
     has_many :goals,
         class_name: :Goal,
         foreign_key: :user_id
+
+    has_many :cheers_given,
+        class_name: :Cheer,
+        foreign_key: :giver_id
+
+    has_many :cheers_received,
+        through: :goals,
+        source: :cheers
 
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
@@ -54,4 +64,9 @@ class User < ApplicationRecord
     def ensure_session_token
         self.session_token ||= self.class.generate_session_token
     end
+
+    def ensure_cheer_count
+        self.cheer_count ||= Cheer::CHEER_LIMIT
+    end
+    
 end
