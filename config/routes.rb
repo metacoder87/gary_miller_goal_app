@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments, only: [:create]
   resources :cheers, only: [:index]
   resources :goals do
     resources :cheers, only: [:create]
