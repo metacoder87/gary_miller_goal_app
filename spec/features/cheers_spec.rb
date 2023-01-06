@@ -56,8 +56,8 @@ end
 
 feature "limit on cheers" do
     given!(:hello_world) { FactoryBot.create(:user_hw) }
-    given!(:foo_bar) { FactorBot.create(:user_foo) }
-    given!(:hw_goal) { FactorBot.create(:goal, author: hello_world) }
+    given!(:foo_bar) { FactoryBot.create(:user_foo) }
+    given!(:hw_goal) { FactoryBot.create(:goal, author: hello_world) }
 
     background(:each) do
         login_as(foo_bar)
