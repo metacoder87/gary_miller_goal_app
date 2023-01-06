@@ -32,7 +32,7 @@ end
 
 feature "viewing my cheers" do
     given!(:hello_world) { FactoryBot.create(:user_hw) }
-    given!(:foo_bar) { FactorBot.create(:user_foo) }
+    given!(:foo_bar) { FactoryBot.create(:user_foo) }
     given!(:hw_goal) { FactoryBot.create(:goal, author: hello_world) }
 
     background(:each) do
