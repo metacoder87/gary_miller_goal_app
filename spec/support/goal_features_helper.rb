@@ -1,4 +1,4 @@
-module GoalFeatureHelper
+module GoalFeaturesHelper
 
     def submit_new_goal(goal_title, privacy = {private: false})
         visit new_goal_url
