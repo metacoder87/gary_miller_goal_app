@@ -4,7 +4,7 @@ RSpec.describe "cheers/index" do
     let(:hello_world) { FactoryBot.create(:user_hw) }
     let(:foo_bar) { FactoryBot.create(:user_foo) }
 
-    let(:hw_goal) { FactoryBot.ceate(:goal, author: hello_world) }
+    let(:hw_goal) { FactoryBot.create(:goal, author: hello_world) }
     let(:foo_goal) { FactoryBot.create(:goal, author: foo_bar) }
 
     let(:cheer1) { Cheer.create!(giver_id: hello_world.id, goal_id: foo_goal.id) }
