@@ -40,7 +40,7 @@
             <span id="cheer-limit"><%= current_user.cheer_count %></span>
           </p>
         <% else %>
-          <p><a href="<%= new_user_url %>">Sign Up</a></p>
+          <p><a href="<%= new_user_path %>">Sign Up</a></p>
           <p>or</p>
           <p><a href="<%= new_session_url %>">Log In</a></p>
         <% end %>
