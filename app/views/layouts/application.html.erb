@@ -24,7 +24,7 @@
       <div class="pull-right">
         <% if current_user %>
           <p>Welcome <%= current_user_name %></p>
-          <form action="<%= session_url %>">
+          <form action="<%= session_url(session) %>">
             <input 
               type="hidden" 
               name="authenticity_token" 
