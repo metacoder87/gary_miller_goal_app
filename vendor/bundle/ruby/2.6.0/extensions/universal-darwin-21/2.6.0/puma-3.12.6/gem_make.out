@@ -1,0 +1,22 @@
+current directory: /Volumes/XD/My Stuff/Documents/aA_projects/gary_miller_goal_app/vendor/bundle/ruby/2.6.0/gems/puma-3.12.6/ext/puma_http11
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -I /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0 -r ./siteconf20230218-3944-1g8jac8.rb extconf.rb
+checking for BIO_read() in -lcrypto... no
+checking for BIO_read() in -llibeay32... no
+creating Makefile
+
+current directory: /Volumes/XD/My Stuff/Documents/aA_projects/gary_miller_goal_app/vendor/bundle/ruby/2.6.0/gems/puma-3.12.6/ext/puma_http11
+make "DESTDIR=" clean
+
+current directory: /Volumes/XD/My Stuff/Documents/aA_projects/gary_miller_goal_app/vendor/bundle/ruby/2.6.0/gems/puma-3.12.6/ext/puma_http11
+make "DESTDIR="
+compiling http11_parser.c
+compiling io_buffer.c
+compiling mini_ssl.c
+compiling puma_http11.c
+linking shared-object puma/puma_http11.bundle
+ld: warning: directory not found for option '-L/AppleInternal/Library/BuildRoots/20d6c351-ee94-11ec-bcaf-7247572f23b4/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.5.Internal.sdk/usr/local/libressl-by-deployment-target/11.0/lib'
+ld: warning: directory not found for option '-L/AppleInternal/Library/BuildRoots/20d6c351-ee94-11ec-bcaf-7247572f23b4/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.5.Internal.sdk/usr/local/lib'
+
+current directory: /Volumes/XD/My Stuff/Documents/aA_projects/gary_miller_goal_app/vendor/bundle/ruby/2.6.0/gems/puma-3.12.6/ext/puma_http11
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 puma_http11.bundle ./.gem.20230218-3944-1u2kz89/puma
