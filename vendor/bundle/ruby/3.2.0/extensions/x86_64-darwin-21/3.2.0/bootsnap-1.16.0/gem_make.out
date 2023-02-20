@@ -1,0 +1,18 @@
+current directory: /Volumes/XD/MyStuff/Documents/aA_projects/gary_miller_goal_app/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+/Users/metacoder/.rbenv/versions/3.2.0/bin/ruby -I /Users/metacoder/.rbenv/versions/3.2.0/lib/ruby/site_ruby/3.2.0 extconf.rb
+creating Makefile
+
+current directory: /Volumes/XD/MyStuff/Documents/aA_projects/gary_miller_goal_app/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230219-66110-dnqz3 sitelibdir\=./.gem.20230219-66110-dnqz3 clean
+
+current directory: /Volumes/XD/MyStuff/Documents/aA_projects/gary_miller_goal_app/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230219-66110-dnqz3 sitelibdir\=./.gem.20230219-66110-dnqz3
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Volumes/XD/MyStuff/Documents/aA_projects/gary_miller_goal_app/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230219-66110-dnqz3 sitelibdir\=./.gem.20230219-66110-dnqz3 install
+/usr/local/bin/ginstall -c -m 0755 bootsnap.bundle ./.gem.20230219-66110-dnqz3/bootsnap
+
+current directory: /Volumes/XD/MyStuff/Documents/aA_projects/gary_miller_goal_app/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230219-66110-dnqz3 sitelibdir\=./.gem.20230219-66110-dnqz3 clean

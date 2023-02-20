@@ -1,0 +1,18 @@
+current directory: /Volumes/XD/MyStuff/Documents/aA_projects/gary_miller_goal_app/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/metacoder/.rbenv/versions/3.2.0/bin/ruby -I /Users/metacoder/.rbenv/versions/3.2.0/lib/ruby/site_ruby/3.2.0 extconf.rb
+creating Makefile
+
+current directory: /Volumes/XD/MyStuff/Documents/aA_projects/gary_miller_goal_app/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20230219-66110-g0r5mb sitelibdir\=./.gem.20230219-66110-g0r5mb clean
+
+current directory: /Volumes/XD/MyStuff/Documents/aA_projects/gary_miller_goal_app/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20230219-66110-g0r5mb sitelibdir\=./.gem.20230219-66110-g0r5mb
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Volumes/XD/MyStuff/Documents/aA_projects/gary_miller_goal_app/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20230219-66110-g0r5mb sitelibdir\=./.gem.20230219-66110-g0r5mb install
+/usr/local/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20230219-66110-g0r5mb/skiptrace/internal
+
+current directory: /Volumes/XD/MyStuff/Documents/aA_projects/gary_miller_goal_app/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20230219-66110-g0r5mb sitelibdir\=./.gem.20230219-66110-g0r5mb clean
