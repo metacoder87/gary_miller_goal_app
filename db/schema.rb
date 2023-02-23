@@ -50,7 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_04_225132) do
     t.string "username", null: false
     t.string "session_token", null: false
     t.string "password_digest", null: false
-    t.integer "cheer_count", default: 0, null: false
+    t.integer "cheer_count", default: 50, null: false
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.index ["session_token"], name: "index_users_on_session_token", unique: true

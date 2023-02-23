@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :username, null: false
       t.string :session_token, null: false
       t.string :password_digest, null: false
-      t.integer :cheer_count, default: 0, null: false
+      t.integer :cheer_count, default: 50, null: false
 
       t.timestamps
     end
