@@ -16,7 +16,7 @@ feature "CRUD of goals" do
         scenario "should show the new goal after creation" do
             submit_new_goal("have some toes")
             expect(page).to have_content "have some toes"
-            expect(page).to have_content "Goal save!"
+            expect(page).to have_content "Goal saved!"
         end
     end
 
