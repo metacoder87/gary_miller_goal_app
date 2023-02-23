@@ -38,7 +38,7 @@ class GoalsController < ApplicationController
   def update
     @goal = Goal.find(params[:id])
 
-    if @goal.update_attributes(goal_params)
+    if @goal.update(goal_params)
       flash[:notices] = ['Goal updated!']
       if request.referer == edit_goal_url(@goal)
         redirect_to @goal
@@ -50,6 +50,7 @@ class GoalsController < ApplicationController
       render :edit
     end
   end
+
 
   # DELETE /goals/1 or /goals/1.json
   def destroy
